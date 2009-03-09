@@ -6,10 +6,11 @@ use strict;
 
 require Exporter;
 *import = *import = \&Exporter::import;
+
 use vars qw( @EXPORT_OK %EXPORT_TAGS );
-@EXPORT_OK = qw( @Scalars @Arrays @Hashes @FileHandles @Symbols
-    @Functions @Barewords );
-%EXPORT_TAGS = ( ':all' => \@EXPORT_OK );
+@EXPORT_OK = qw( @Scalars @Arrays @Hashes @Filehandles @Symbols
+                 @Functions @Barewords );
+%EXPORT_TAGS = ( 'all' => \@EXPORT_OK );
 
 use vars '$VERSION';
 $VERSION = '1.08';
