@@ -11,6 +11,7 @@ BEGIN {
     plan( tests => 7 );
     $^W = 1;
 }
+use lib qw( ../lib lib );
 use B::Keywords;
 
 #########################

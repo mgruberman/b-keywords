@@ -2,7 +2,7 @@ NAME
     B::Keywords - Lists of reserved barewords and symbol names
 
 VERSION
-    Version 1.00
+    Version 1.02
 
 SYNOPSIS
       use B::Keywords;

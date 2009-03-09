@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.44.
+signed via the Module::Signature module, version 0.54.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,22 +14,23 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 de45d257804c1dc90a97ba7a0b1a71bda48d15e4 Changes
+SHA1 fb6c5b8cab36467f5a6fa209f0e91c332231c175 Changes
 SHA1 0e987cce2b4e94a4d6920e7353f8674a4462528a LICENSE
-SHA1 58ba7c32f59e9d0435b40d302f8b1782a73b51cf MANIFEST
-SHA1 4456c68970a24c63d93033d039d234a9ead63f82 META.yml
+SHA1 9d71696a9192f05290d3878d28210ba1e5963359 MANIFEST
+SHA1 d6d8765c85b75191a7538fc408379c978c8fdf0e META.yml
 SHA1 ec66ad077444ac7784de2c9fbe4d4375f17343a6 Makefile.PL
-SHA1 1b1d442685a80e21badbbe4c8eb5bb929fcc46e2 README
-SHA1 c18ee2b83067cc3f619d8a0920dc33f80f0be263 lib/B/Keywords.pm
+SHA1 fdab2fd0183c1843322d9f64d7d1dab3582ba4a9 README
+SHA1 a7f5fc52a8f44d752bd5c9b1f85918052b9698ed lib/B/Keywords.pm
 SHA1 75c0e6f22debd14aedc86b488ae48eb1d827cffb t/00signature.t
 SHA1 9d8985fc7ce805f198363066b2a14b4f48abe427 t/01pod.t
 SHA1 e0ee50ef74aa83ddb61dc1594e60e450eb3bae39 t/02pod-coverage.t
 SHA1 2da105f0257e2f3560bda6a7325ac8d8a7e22157 t/03yaml.t
-SHA1 e178869108bb67706ba27c6390a86951a10faf61 t/10basic.t
+SHA1 26eebf3bf6177dc6fc7f91890c68c05b7a61fbe1 t/10basic.t
+SHA1 ec3370b7251c53d8c2366cd2c4320fdcb48810e9 t/11keywords.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
+Version: GnuPG v1.4.2.2 (GNU/Linux)
 
-iD8DBQFD07F+ejb/5debeXcRArTJAJ0Ryb+ExndnIFFOCmh64bkqoP5e7QCfV1As
-TNGXt9nuPGUnDqOlqurpUig=
-=YqTi
+iD8DBQFEruV1ejb/5debeXcRAoI3AKCUQLCv+TTR8SGOJQvOSYFr5QS7vwCfQykS
+fOLb3jChKhZ4LUWFv3TDAq0=
+=X1ll
 -----END PGP SIGNATURE-----

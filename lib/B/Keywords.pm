@@ -6,7 +6,7 @@ use vars qw(
     @Scalars @Arrays @Hashes @Filehandles @Symbols
     @Functions @Barewords);
 
-use Exporter ();
+require Exporter;
 *import    = \&Exporter::import;
 @EXPORT_OK = qw( @Scalars @Arrays @Hashes @FileHandles @Symbols
     @Functions @Barewords );
@@ -18,11 +18,11 @@ B::Keywords - Lists of reserved barewords and symbol names
 
 =head1 VERSION
 
-Version 1.01
+Version 1.02
 
 =cut
 
-$VERSION = '1.01';
+$VERSION = '1.02';
 
 =head1 SYNOPSIS
 
@@ -48,7 +48,7 @@ everything.
 
 =cut
 
-@Scalars = split ' ', <<'SCALAR';
+@Scalars = split q' ', <<'SCALAR';
     $a
     $b
     $_ $ARG
@@ -111,7 +111,7 @@ everything.
     $ARGV
 SCALAR
 
-@Arrays = split ' ', <<'ARRAY';
+@Arrays = split q' ', <<'ARRAY';
     @+ $LAST_MATCH_END
     @- @LAST_MATCH_START
     @ARGV
@@ -119,7 +119,7 @@ SCALAR
     @_
 ARRAY
 
-@Hashes = split ' ', <<'HASH';
+@Hashes = split q' ', <<'HASH';
     %OVERLOAD
     %!
     %^H
@@ -128,7 +128,7 @@ ARRAY
     %SIG
 HASH
 
-@Filehandles = split ' ', <<'FILEHANDLE';
+@Filehandles = split q' ', <<'FILEHANDLE';
     *ARGV ARGV
     ARGVOUT
     STDIN
@@ -136,7 +136,7 @@ HASH
     STDERR
 FILEHANDLE
 
-@Functions = split ' ', <<'FUNCTION';
+@Functions = split q' ', <<'FUNCTION';
     AUTOLOAD
     BEGIN
     DESTROY
@@ -339,6 +339,7 @@ FILEHANDLE
     sqrt
     srand
     stat
+    state
     study
     sub
     substr
@@ -381,9 +382,16 @@ FILEHANDLE
     x
     xor
     y
+
+    -r -w -x -o
+    -R -W -X -O -e -z -s
+    -f -d -l -p -S -b -c -t
+    -u -g -k
+    -T -B
+    -M -A -C
 FUNCTION
 
-@Barewords = split ' ', <<'BAREWORD';
+@Barewords = split q' ', <<'BAREWORD';
     NULL
     __FILE__
     __LINE__
@@ -420,5 +428,5 @@ b) the "Artistic License" which comes with Perl.
 =cut
 
 # This quote is blatantly copied from ErrantStory.com, Michael Poe's
-# excellent web comic
+# excellent web comic.
 "You know, when you stop and think about it, Cthulhu is a bit a Mary Sue isn't he?"
