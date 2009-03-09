@@ -452,13 +452,51 @@ everything.
 keywords.pl from the perl source, L<perlvar>, L<perlfunc>,
 L<perldelta>.
 
-=head1 AUTHOR
 
-Joshua ben Jore <jjore@cpan.org>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to C<bug-B-Keywords at
+rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=B-Keywords>. I will be
+notified, and then you'll automatically be notified of progress on
+your bug as I make changes.
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+  perldoc B::Keywords
+
+You can also look for information at:
+
+=over
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=B-Keywords>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/B-Keywords>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/B-Keywords>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/B-Keywords>
+
+=back
+
+=head1 ACKNOWLEDGEMENTS
+
+Michael G Schwern for patches
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007, Joshua ben Jore. All rights reserved.
+Copyright 2009 Joshua ben Jore, All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of either:
@@ -467,3 +505,11 @@ a) the GNU General Public License as published by the Free Software
    Foundation; version 2, or
 
 b) the "Artistic License" which comes with Perl.
+
+=head1 SOURCE AVAILABILITY
+
+This source is in Github: L<git://github.com/jbenjore/b-keywords.git>
+
+=head1 AUTHOR
+
+Joshua ben Jore <jjore@cpan.org>
