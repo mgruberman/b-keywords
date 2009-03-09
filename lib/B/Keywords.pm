@@ -407,7 +407,7 @@ B::Keywords - Lists of reserved barewords and symbol names
 C<B::Keywords> supplies seven arrays of keywords: C<@Scalars>,
 C<@Arrays>, C<@Hashes>, C<@Filehandles>, C<@Symbols>, C<@Functions>,
 and C<@Barewords>. The C<@Symbols> array includes the contents of each
-of C<@Scalars>, C<@Arrays>, C<@Hashes>, and C<@Filehandles>.
+of C<@Scalars>, C<@Arrays>, C<@Hashes>, C<@Functions> and C<@Filehandles>.
 Similarly, C<@Barewords> adds a few non-function keywords and
 operators to the C<@Functions> array.
 
