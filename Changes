@@ -1,6 +1,8 @@
 Revision history for Perl extension B::Keywords.
 
 0.01  Fri Mar 21 20:37:00 2003
-	- original version; created by h2xs 1.5 with options
-		-X -P -n B::Keywords
-
+  - original version; created by h2xs 1.5 with options
+    -X -P -n B::Keywords
+0.02  Mon Mar 24
+  - Added Makefile.PL wrapper for Build.PL
+  - Added $a and $b to @Symbols

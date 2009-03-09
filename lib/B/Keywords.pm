@@ -1,8 +1,10 @@
 package B::Keywords;
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 @Symbols = qw[
+ $a
+ $b
  %OVERLOAD
  %!
  $_
@@ -340,17 +342,27 @@ list is copied right from the source file keywords.pl with the addition of
 'lock'. @Symbols was created by reading L<perlvar> and the delta
 documentation. All additions and modifications are welcome.
 
-=head1 AUTHOR
-
-Joshua b. Jore <jjore@cpan.org>
-
 =head1 SEE ALSO
 
+keywords.pl from the perl source
 L<perlvar>
 L<perlfunc>
 L<perldelta>
 
+=head1 AUTHOR
+
+Joshua b. Jore <jjore@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2003, Joshua b. Jore. All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of either:
+
+a) the GNU General Public License as published by the Free Software
+   Foundation; version 2, or
+
+b) the "Artistic License" which comes with Perl.
+
 =cut
-
-
-
