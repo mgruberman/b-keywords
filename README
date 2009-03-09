@@ -1,0 +1,29 @@
+B::Keywords version 0.01
+=======================
+
+B::Keywords supplies the two arrays - @Symbols and @Barewords. The
+barewords list is copied right from the source file keywords.pl with the
+addition of 'lock'. @Symbols was created by reading the perlvar manpage
+and the delta documentation. All additions and modifications are
+welcome.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Build.PL
+   ./Build
+   ./Build install
+
+DEPENDENCIES
+
+None
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2003 Joshua b. Jore. All rights reserved.
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; version 2.
+
