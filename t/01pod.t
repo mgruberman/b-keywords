@@ -1,5 +1,5 @@
 #!perl
-# $Id: /B-Keywords/trunk/t/01pod.t 75 2006-08-17T14:35:42.213094Z josh  $
+# $Id: /src/B-Keywords/trunk/t/01pod.t 188 2006-08-17T14:35:42.213094Z josh  $
 use Test::More;
 
 if ( not $ENV{AUTHOR_TESTS} ) {

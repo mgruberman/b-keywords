@@ -1,5 +1,5 @@
 ## no critic (PodSections,UseWarnings,Interpolation,EndWithOne,NoisyQuotes)
-# $Id: /B-Keywords/trunk/lib/B/Keywords.pm 273 2006-11-25T04:04:34.091173Z josh  $
+# $Id: /src/B-Keywords/trunk/lib/B/Keywords.pm 30165 2007-02-14T17:19:30.874598Z josh  $
 
 package B::Keywords;
 
@@ -13,7 +13,7 @@ use vars qw( @EXPORT_OK %EXPORT_TAGS );
 %EXPORT_TAGS = ( ':all' => \@EXPORT_OK );
 
 use vars '$VERSION';
-$VERSION = '1.05';
+$VERSION = '1.06';
 
 use vars '@Scalars';
 @Scalars = (
@@ -334,6 +334,12 @@ use vars '@Barewords';
     __DATA__
     __END__
     CORE
+    EQ
+    GE
+    GT
+    LE
+    LT
+    NE
     NULL
     and
     cmp
@@ -451,7 +457,7 @@ Joshua ben Jore <jjore@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2006, Joshua ben Jore. All rights reserved.
+Copyright 2007, Joshua ben Jore. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of either:

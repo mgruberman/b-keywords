@@ -34,3 +34,5 @@ Revision history for Perl extension B::Keywords.
   - Fixed syntax bugx in 1.03
 1.05 Nov 24, 2006
   - Added UNITCHECK
+1.07 Feb 14, 2007
+  - Added EQ GE GT NE LE LT for 5.6.

@@ -23,5 +23,5 @@ my @missing = grep { ! exists $covered{$_} } @keywords;
 
 ok( ! @missing );
 if ( @missing ) {
-    print "# Missing: @missing\n";
+    diag( "Missing: @missing" );
 }
