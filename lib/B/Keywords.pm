@@ -28,7 +28,7 @@ use vars '@Scalars';
         $. $INPUT_LINE_NUMBER $NR
         $/ $INPUT_RECORD_SEPARATOR $RS
         $| $OUTPUT_AUTO_FLUSH ), '$,', qw( $OUTPUT_FIELD_SEPARATOR $OFS
-        $OUTPUT_RECORD_SEPARATOR $ORS
+        $\ $OUTPUT_RECORD_SEPARATOR $ORS
         $" $LIST_SEPARATOR
         $; $SUBSCRIPT_SEPARATOR $SUBSEP
         ), '$#', qw( $OFMT
