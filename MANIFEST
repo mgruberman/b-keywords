@@ -10,5 +10,7 @@ t/00signature.t
 t/01pod.t
 t/02pod-coverage.t
 t/03yaml.t
+t/04boilerplate.t
+t/05critic.t
 t/10basic.t
 t/11keywords.t

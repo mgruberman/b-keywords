@@ -1,9 +1,14 @@
+#!perl
+# $Id: /B-Keywords/trunk/t/03yaml.t 75 2006-08-17T14:35:42.213094Z josh  $
 use Test::More;
-eval "use YAML qw( LoadFile )";
-if ($@) {
-    plan( skip_all => "YAML required to test META.yml's syntax" );
+
+if ( not $ENV{AUTHOR_TESTS} ) {
+    plan skip_all => 'Skipping author tests';
 }
 else {
-    plan( tests => 1 );
+    plan tests => 1;
+    require YAML;
+    YAML->import('LoadFile');
+
     ok( LoadFile("META.yml") );
 }

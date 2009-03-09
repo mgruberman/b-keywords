@@ -1,142 +1,114 @@
+## no critic (PodSections,UseWarnings,Interpolation,EndWithOne,NoisyQuotes)
+# $Id: /B-Keywords/trunk/lib/B/Keywords.pm 82 2006-08-17T17:42:06.773824Z josh  $
+
 package B::Keywords;
 
 use strict;
-use vars qw(
-    @EXPORT_OK %EXPORT_TAGS $VERSION
-    @Scalars @Arrays @Hashes @Filehandles @Symbols
-    @Functions @Barewords);
 
 require Exporter;
-*import    = \&Exporter::import;
+*import = \&Exporter::import;
+use vars qw( @EXPORT_OK %EXPORT_TAGS );
 @EXPORT_OK = qw( @Scalars @Arrays @Hashes @FileHandles @Symbols
     @Functions @Barewords );
-%EXPORT_TAGS = ( all => \@EXPORT_OK );
+%EXPORT_TAGS = ( ':all' => \@EXPORT_OK );
 
-=head1 NAME
+use vars '$VERSION';
+$VERSION = '1.04';
 
-B::Keywords - Lists of reserved barewords and symbol names
+use vars '@Scalars';
+@Scalars = (
+    qw( $a
+        $b
+        $_ $ARG
+        $& $MATCH
+        $` $PREMATCH
+        $' $POSTMATCH
+        $+ $LAST_PAREN_MATCH
+        $* $MULTILINE_MATCHING
+        $. $INPUT_LINE_NUMBER $NR
+        $/ $INPUT_RECORD_SEPARATOR $RS
+        $| $OUTPUT_AUTO_FLUSH ), '$,', qw( $OUTPUT_FIELD_SEPARATOR $OFS
+        $OUTPUT_RECORD_SEPARATOR $ORS
+        $" $LIST_SEPARATOR
+        $; $SUBSCRIPT_SEPARATOR $SUBSEP
+        ), '$#', qw( $OFMT
+        $% $FORMAT_PAGE_NUMBER
+        $= $FORMAT_LINES_PER_PAGE
+        $- $FORMAT_LINES_LEFT
+        $~ $FORMAT_NAME
+        $^ $FORMAT_TOP_NAME
+        $: $FORMAT_LINE_BREAK_CHARACTERS
+        $? $CHILD_ERROR $^CHILD_ERROR_NATIVE
+        $! $ERRNO $OS_ERROR
+        $@ $EVAL_ERROR
+        $$ $PROCESS_ID $PID
+        $< $REAL_USER_ID $UID
+        $> $EFFECTIVE_USER_ID $EUID ), '$(', qw( $REAL_GROUP_ID $GID ), '$)',
+    qw(
+        $EFFECTIVE_GROUP_ID $EGID
+        $0 $PROGRAM_NAME
+        $[
+        $]
+        $^A $ACCUMULATOR
+        $^C $COMPILING
+        $^D $DEBUGGING
+        $^E $EXTENDED_OS_ERROR
+        $^ENCODING
+        $^F $SYSTEM_FD_MAX
+        $^H
+        $^I $INPLACE_EDIT
+        $^L $FORMAT_FORMFEED
+        $^M
+        $^N
+        $^O $OSNAME
+        $^OPEN
+        $^P $PERLDB
+        $^R $LAST_REGEXP_CODE_RESULT
+        $^RE_DEBUG_FLAGS
+        $^RE_TRIE_MAXBUF
+        $^S $EXCEPTIONS_BEING_CAUGHT
+        $^T $BASETIME
+        $^TAINT
+        $^UNICODE
+        $^UTF8LOCALE
+        $^V $PERL_VERSION
+        $^W $WARNING $^WARNING_BITS
+        $^WIDE_SYSTEM_CALLS
+        $^X $EXECUTABLE_NAME
+        $ARGV
+        ),
+);
 
-=head1 VERSION
-
-Version 1.02
-
-=cut
-
-$VERSION = '1.02';
-
-=head1 SYNOPSIS
-
-  use B::Keywords qw( @Symbols Barewords );
-  print join "\n", @Symbols,
-                   @Barewords;
-
-=head1 DESCRIPTION
-
-C<B::Keywords> supplies seven arrays of keywords: C<@Scalars>,
-C<@Arrays>, C<@Hashes>, C<@Filehandles>, C<@Symbols>, C<@Functions>,
-and C<@Barewords>. The C<@Symbols> array includes the contents of each
-of C<@Scalars>, C<@Arrays>, C<@Hashes>, and C<@Filehandles>.
-Similarly, C<@Barewords> adds a few non-function keywords (like
-C<__DATA__> and C<NULL>) to the C<@Functions> array.
-
-All additions and modifications are welcome.
-
-=head1 EXPORT
-
-Anything can be exported if you desire. Use the :all tag to get
-everything.
-
-=cut
-
-@Scalars = split q' ', <<'SCALAR';
-    $a
-    $b
-    $_ $ARG
-    $& $MATCH
-    $` $PREMATCH
-    $' $POSTMATCH
-    $+ $LAST_PAREN_MATCH
-    $* $MULTILINE_MATCHING
-    $. $INPUT_LINE_NUMBER $NR
-    $/ $INPUT_RECORD_SEPARATOR $RS
-    $| $OUTPUT_AUTO_FLUSH
-    $, $OUTPUT_FIELD_SEPARATOR $OFS
-    $\ $OUTPUT_RECORD_SEPARATOR $ORS
-    $" $LIST_SEPARATOR
-    $; $SUBSCRIPT_SEPARATOR $SUBSEP
-    $# $OFMT
-    $% $FORMAT_PAGE_NUMBER
-    $= $FORMAT_LINES_PER_PAGE
-    $- $FORMAT_LINES_LEFT
-    $~ $FORMAT_NAME
-    $^ $FORMAT_TOP_NAME
-    $: $FORMAT_LINE_BREAK_CHARACTERS
-    $? $CHILD_ERROR $^CHILD_ERROR_NATIVE
-    $! $ERRNO $OS_ERROR
-    $@ $EVAL_ERROR
-    $$ $PROCESS_ID $PID
-    $< $REAL_USER_ID $UID
-    $> $EFFECTIVE_USER_ID $EUID
-    $( $REAL_GROUP_ID $GID
-    $) $EFFECTIVE_GROUP_ID $EGID
-    $0 $PROGRAM_NAME
-    $[
-    $]
-    $^A $ACCUMULATOR
-    $^C $COMPILING
-    $^D $DEBUGGING
-    $^E $EXTENDED_OS_ERROR
-    $^ENCODING
-    $^F $SYSTEM_FD_MAX
-    $^H
-    $^I $INPLACE_EDIT
-    $^L $FORMAT_FORMFEED
-    $^M
-    $^N
-    $^O $OSNAME
-    $^OPEN
-    $^P $PERLDB
-    $^R $LAST_REGEXP_CODE_RESULT
-    $^RE_DEBUG_FLAGS
-    $^RE_TRIE_MAXBUF
-    $^S $EXCEPTIONS_BEING_CAUGHT
-    $^T $BASETIME
-    $^TAINT
-    $^UNICODE
-    $^UTF8LOCALE
-    $^V $PERL_VERSION
-    $^W $WARNING $^WARNING_BITS
-    $^WIDE_SYSTEM_CALLS
-    $^X $EXECUTABLE_NAME
-    $ARGV
-SCALAR
-
-@Arrays = split q' ', <<'ARRAY';
+use vars '@Arrays';
+@Arrays = qw(
     @+ $LAST_MATCH_END
     @- @LAST_MATCH_START
     @ARGV
     @INC
     @_
-ARRAY
+);
 
-@Hashes = split q' ', <<'HASH';
+use vars '@Hashes';
+@Hashes = qw(
     %OVERLOAD
     %!
     %^H
     %INC
     %ENV
     %SIG
-HASH
+);
 
-@Filehandles = split q' ', <<'FILEHANDLE';
+use vars '@Filehandles';
+@Filehandles = qw(
     *ARGV ARGV
     ARGVOUT
     STDIN
     STDOUT
     STDERR
-FILEHANDLE
+);
 
-@Functions = split q' ', <<'FUNCTION';
+use vars '@Functions';
+@Functions = qw(
     AUTOLOAD
     BEGIN
     DESTROY
@@ -146,7 +118,6 @@ FILEHANDLE
     abs
     accept
     alarm
-    and
     atan2
     bind
     binmode
@@ -162,22 +133,16 @@ FILEHANDLE
     chroot
     close
     closedir
-    cmp
     connect
-    continue
     cos
     crypt
     dbmclose
     dbmopen
-    default
     defined
     delete
     die
-    do
     dump
     each
-    else
-    elsif
     endgrent
     endhostent
     endnetent
@@ -185,22 +150,16 @@ FILEHANDLE
     endpwent
     endservent
     eof
-    eq
-    err
     eval
     exec
     exists
     exit
-    exp
     fcntl
     fileno
     flock
-    for
-    foreach
     fork
     format
     formline
-    ge
     getc
     getgrent
     getgrgid
@@ -227,14 +186,11 @@ FILEHANDLE
     getservent
     getsockname
     getsockopt
-    given
     glob
     gmtime
     goto
     grep
-    gt
     hex
-    if
     index
     int
     ioctl
@@ -244,7 +200,6 @@ FILEHANDLE
     last
     lc
     lcfirst
-    le
     length
     link
     listen
@@ -252,8 +207,6 @@ FILEHANDLE
     localtime
     log
     lstat
-    lt
-    m
     map
     mkdir
     msgctl
@@ -261,18 +214,14 @@ FILEHANDLE
     msgrcv
     msgsnd
     my
-    ne
     next
-    no
     not
     oct
     open
     opendir
-    or
     ord
     our
     pack
-    package
     pipe
     pop
     pos
@@ -280,12 +229,7 @@ FILEHANDLE
     printf
     prototype
     push
-    q
-    qq
-    qr
     quotemeta
-    qw
-    qx
     rand
     read
     readdir
@@ -303,7 +247,6 @@ FILEHANDLE
     rewinddir
     rindex
     rmdir
-    s
     say
     scalar
     seek
@@ -341,7 +284,6 @@ FILEHANDLE
     stat
     state
     study
-    sub
     substr
     symlink
     syscall
@@ -356,18 +298,15 @@ FILEHANDLE
     tied
     time
     times
-    tr
     truncate
     uc
     ucfirst
     umask
     undef
-    unless
     unlink
     unpack
     unshift
     untie
-    until
     use
     utime
     values
@@ -376,12 +315,7 @@ FILEHANDLE
     waitpid
     wantarray
     warn
-    when
-    while
     write
-    x
-    xor
-    y
 
     -r -w -x -o
     -R -W -X -O -e -z -s
@@ -389,20 +323,121 @@ FILEHANDLE
     -u -g -k
     -T -B
     -M -A -C
-FUNCTION
+);
 
-@Barewords = split q' ', <<'BAREWORD';
-    NULL
+use vars '@Barewords';
+@Barewords = qw(
     __FILE__
     __LINE__
     __PACKAGE__
     __DATA__
     __END__
     CORE
+    NULL
+    and
+    cmp
+    continue
+    default
+    do
+    else
+    elsif
+    eq
+    err
+    exp
+    for
+    foreach
+    ge
+    given
+    gt
+    if
+    le
     lock
-BAREWORD
+    lt
+    m
+    ne
+    no
+    or
+    package
+    q
+    qq
+    qr
+    qw
+    qx
+    s
+    sub
+    tr
+    unless
+    until
+    when
+    while
+    x
+    xor
+    y
+);
 
-@Symbols = ( @Scalars, @Arrays, @Hashes, @Filehandles );
+use vars '@Symbols';
+@Symbols = ( @Scalars, @Arrays, @Hashes, @Filehandles, @Functions );
+
+# This quote is blatantly copied from ErrantStory.com, Michael Poe's
+# comic.
+"You know, when you stop and think about it, Cthulhu is a bit a Mary Sue isn't he?"
+
+__END__
+
+=head1 NAME
+
+B::Keywords - Lists of reserved barewords and symbol names
+
+=head1 SYNOPSIS
+
+  use B::Keywords qw( @Symbols Barewords );
+  print join "\n", @Symbols,
+                   @Barewords;
+
+=head1 DESCRIPTION
+
+C<B::Keywords> supplies seven arrays of keywords: C<@Scalars>,
+C<@Arrays>, C<@Hashes>, C<@Filehandles>, C<@Symbols>, C<@Functions>,
+and C<@Barewords>. The C<@Symbols> array includes the contents of each
+of C<@Scalars>, C<@Arrays>, C<@Hashes>, and C<@Filehandles>.
+Similarly, C<@Barewords> adds a few non-function keywords and
+operators to the C<@Functions> array.
+
+All additions and modifications are welcome.
+
+=head1 DATA
+
+=over
+
+=item C<@Scalars>
+
+=item C<@Arrays>
+
+=item C<@Hashes>
+
+=item C<@Filehandles>
+
+=item C<@Functions>
+
+The above are lists of variables, special file handles, and built in
+functions.
+
+=item C<@Symbols>
+
+This is just the combination of all of the above: variables, file
+handles, and functions.
+
+=item C<@Barewords>
+
+This is a list of other special keywords in perl including operators
+and all the control structures.
+
+=back
+
+=head1 EXPORT
+
+Anything can be exported if you desire. Use the :all tag to get
+everything.
 
 =head1 SEE ALSO
 
@@ -424,9 +459,3 @@ a) the GNU General Public License as published by the Free Software
    Foundation; version 2, or
 
 b) the "Artistic License" which comes with Perl.
-
-=cut
-
-# This quote is blatantly copied from ErrantStory.com, Michael Poe's
-# excellent web comic.
-"You know, when you stop and think about it, Cthulhu is a bit a Mary Sue isn't he?"

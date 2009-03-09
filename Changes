@@ -24,6 +24,11 @@ Revision history for Perl extension B::Keywords.
 1.01 Jan 22, 2006
   - Added some variables from 5.10
   - Stuff is exportable now
-1.02 Jul 7, 2007
+1.02 Jul 7, 2006
   - Added test to watch CORE/keywords.h for new stuff
   - Added -x and state to @Functions.
+1.03 Aug 17, 2006
+  - Separated non-functions in @Functions to @Barewords
+  - Used qw() lists
+1.04 Aug 17, 2006
+  - Fixed syntax bugx in 1.03
