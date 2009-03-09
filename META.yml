@@ -1,9 +1,9 @@
 --- #YAML:1.0
 name:                B-Keywords
-version:             1.06
+version:             1.08
 abstract:            Lists of reserved barewords and symbol names
 license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.31
+generated_by:        ExtUtils::MakeMaker version 6.36
 distribution_type:   module
 requires:     
 meta-spec:

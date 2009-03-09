@@ -1,19 +1,18 @@
 ## no critic (PodSections,UseWarnings,Interpolation,EndWithOne,NoisyQuotes)
-# $Id: /src/B-Keywords/trunk/lib/B/Keywords.pm 30165 2007-02-14T17:19:30.874598Z josh  $
 
 package B::Keywords;
 
 use strict;
 
 require Exporter;
-*import = \&Exporter::import;
+*import = *import = \&Exporter::import;
 use vars qw( @EXPORT_OK %EXPORT_TAGS );
 @EXPORT_OK = qw( @Scalars @Arrays @Hashes @FileHandles @Symbols
     @Functions @Barewords );
 %EXPORT_TAGS = ( ':all' => \@EXPORT_OK );
 
 use vars '$VERSION';
-$VERSION = '1.06';
+$VERSION = '1.08';
 
 use vars '@Scalars';
 @Scalars = (
@@ -387,6 +386,7 @@ use vars '@Symbols';
 
 # This quote is blatantly copied from ErrantStory.com, Michael Poe's
 # comic.
+BEGIN { $^W = 0 }
 "You know, when you stop and think about it, Cthulhu is a bit a Mary Sue isn't he?"
 
 __END__

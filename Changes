@@ -36,3 +36,5 @@ Revision history for Perl extension B::Keywords.
   - Added UNITCHECK
 1.07 Feb 14, 2007
   - Added EQ GE GT NE LE LT for 5.6.
+1.08
+  - Removed useless author tests
