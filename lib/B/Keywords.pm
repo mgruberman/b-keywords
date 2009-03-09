@@ -13,7 +13,7 @@ use vars qw( @EXPORT_OK %EXPORT_TAGS );
 %EXPORT_TAGS = ( 'all' => \@EXPORT_OK );
 
 use vars '$VERSION';
-$VERSION = '1.08';
+$VERSION = '1.09';
 
 use vars '@Scalars';
 @Scalars = (
