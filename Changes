@@ -1,20 +1,23 @@
 Revision history for Perl extension B::Keywords.
 
-0.01  Fri Mar 21 20:37:00 2003
+0.01  Mar 21, 2003
   - original version; created by h2xs 1.5 with options
     -X -P -n B::Keywords
-0.02  Mon Mar 24
+0.02  Mar 24, 2003
   - Added Makefile.PL wrapper for Build.PL
   - Added $a and $b to @Symbols
-0.03  Jul 4 2003
+0.03  Jul  4, 2003
   - Fixed formatting
   - (probably made some other changes I now forget)
-0.04 Jul 8 2003
+0.04 Jul  8, 2003
   - Added tests per Josts K's request
   - Added 'use 5.006' because this isn't coded for pre 5.6
-0.05 Jul 8
+0.05 Jul  8 2003
   - Added the test and license file to MANIFEST so it actually gets packaged
     and doesn't just stay in my CVS directory. Boy am I dork.
-0.06 Aug 7
+0.06 Aug  7, 2003
   - 5.005_03 compatible.
   - Added SIGNATURE
+1.00 Dec 29, 2005
+  - Added keywords for 5.10
+  - More tests

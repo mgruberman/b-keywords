@@ -1,30 +1,37 @@
-B::Keywords version 0.06
-=======================
+NAME
+    B::Keywords - Lists of reserved barewords and symbol names
 
-B::Keywords supplies the two arrays - @Symbols and @Barewords. The
-barewords list is copied right from the source file keywords.pl with the
-addition of 'lock'. @Symbols was created by reading the perlvar manpage
-and the delta documentation. All additions and modifications are
-welcome.
+VERSION
+    Version 1.00
 
-INSTALLATION
+SYNOPSIS
+      use B::Keywords;
+      print join "\n", @B::Keywords::Symbols,
+                       @B::Keywords::Barewords;
 
-To install this module type the following:
+DESCRIPTION
+    B::Keywords supplies seven arrays of keywords: @Scalars, @Arrays,
+    @Hashes, @Filehandles, @Symbols, @Functions and @Barewords. The @Symbols
+    array includes the contents of each of @Scalars, @Arrays, @Hashes and
+    @Filehandles. Similarly, @Barewords adds a few non-function keywords
+    (like __DATA__, NULL) to the @Functions array.
 
-   perl Makefile.PL
-   make
-   make test
-   make install
+    All additions and modifications are welcome.
 
-DEPENDENCIES
+SEE ALSO
+    keywords.pl from the perl source, perlvar, perlfunc, perldelta.
 
-None
+AUTHOR
+    Joshua ben Jore <jjore@cpan.org>
 
-COPYRIGHT AND LICENCE
+COPYRIGHT AND LICENSE
+    Copyright 2005, Joshua ben Jore. All rights reserved.
 
-Copyright (C) 2003 Joshua b. Jore. All rights reserved.
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either:
 
-This program is free software; you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation; version 2.
+    a) the GNU General Public License as published by the Free Software
+    Foundation; version 2, or
+
+    b) the "Artistic License" which comes with Perl.
 
