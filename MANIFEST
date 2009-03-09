@@ -1,8 +1,10 @@
 Changes
-lib/B/Keywords.pm
 LICENSE
-Makefile.PL
 MANIFEST
-README
+MANIFEST.SKIP
 META.yml                                Module meta-data (added by MakeMaker)
+Makefile.PL
+README
+SIGNATURE
+lib/B/Keywords.pm
 t/1.t

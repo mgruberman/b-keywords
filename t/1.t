@@ -5,8 +5,9 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 8;
-BEGIN { use_ok('B::Keywords') };
+use Test;
+BEGIN { plan tests => 7; $^W = 1; }
+use B::Keywords;
 
 #########################
 
@@ -17,7 +18,4 @@ ok( @B::Keywords::Filehandles );
 ok( @B::Keywords::Symbols );
 ok( @B::Keywords::Functions );
 ok( @B::Keywords::Barewords );
-
-# Insert your test code below, the Test::More module is use()ed here so read
-# its man page ( perldoc Test::More ) for help writing this test script.
 

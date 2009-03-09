@@ -15,4 +15,6 @@ Revision history for Perl extension B::Keywords.
 0.05 Jul 8
   - Added the test and license file to MANIFEST so it actually gets packaged
     and doesn't just stay in my CVS directory. Boy am I dork.
-
+0.06 Aug 7
+  - 5.005_03 compatible.
+  - Added SIGNATURE

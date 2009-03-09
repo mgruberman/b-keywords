@@ -1,12 +1,12 @@
 package B::Keywords;
-use 5.006;
+
 use strict;
-use warnings FATAL => qw(all);
+
 use vars qw(
     $VERSION @Scalars @Arrays @Hashes @Filehandles @Symbols @Functions
     @Barewords);
 
-$VERSION = '0.05';
+$VERSION = '0.06';
 
 @Scalars = (qw[
  $a
