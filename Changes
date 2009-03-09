@@ -21,3 +21,6 @@ Revision history for Perl extension B::Keywords.
 1.00 Dec 29, 2005
   - Added keywords for 5.10
   - More tests
+1.01 Jan 22, 2006
+  - Added some variables from 5.10
+  - Stuff is exportable now

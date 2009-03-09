@@ -1,10 +1,9 @@
-use Test;
-plan( tests => 1 );
-
+use Test::More;
 eval "use YAML qw( LoadFile )";
 if ($@) {
-    skip( "YAML required to test META.yml's syntax", 1 );
+    plan( skip_all => "YAML required to test META.yml's syntax" );
 }
 else {
+    plan( tests => 1 );
     ok( LoadFile("META.yml") );
 }

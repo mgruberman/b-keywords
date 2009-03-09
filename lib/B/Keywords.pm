@@ -2,8 +2,15 @@ package B::Keywords;
 
 use strict;
 use vars qw(
-    $VERSION @Scalars @Arrays @Hashes @Filehandles @Symbols @Functions
-    @Barewords);
+    @EXPORT_OK %EXPORT_TAGS $VERSION
+    @Scalars @Arrays @Hashes @Filehandles @Symbols
+    @Functions @Barewords);
+
+use Exporter ();
+*import    = \&Exporter::import;
+@EXPORT_OK = qw( @Scalars @Arrays @Hashes @FileHandles @Symbols
+    @Functions @Barewords );
+%EXPORT_TAGS = ( all => \@EXPORT_OK );
 
 =head1 NAME
 
@@ -11,34 +18,40 @@ B::Keywords - Lists of reserved barewords and symbol names
 
 =head1 VERSION
 
-Version 1.00
+Version 1.01
 
 =cut
 
-$VERSION = '1.00';
+$VERSION = '1.01';
 
 =head1 SYNOPSIS
 
-  use B::Keywords;
-  print join "\n", @B::Keywords::Symbols,
-                   @B::Keywords::Barewords;
+  use B::Keywords qw( @Symbols Barewords );
+  print join "\n", @Symbols,
+                   @Barewords;
 
 =head1 DESCRIPTION
 
-B::Keywords supplies seven arrays of keywords: @Scalars, @Arrays,
-@Hashes, @Filehandles, @Symbols, @Functions and @Barewords. The
-@Symbols array includes the contents of each of @Scalars, @Arrays,
-@Hashes and @Filehandles.  Similarly, @Barewords adds a few
-non-function keywords (like __DATA__, NULL) to the @Functions array.
+C<B::Keywords> supplies seven arrays of keywords: C<@Scalars>,
+C<@Arrays>, C<@Hashes>, C<@Filehandles>, C<@Symbols>, C<@Functions>,
+and C<@Barewords>. The C<@Symbols> array includes the contents of each
+of C<@Scalars>, C<@Arrays>, C<@Hashes>, and C<@Filehandles>.
+Similarly, C<@Barewords> adds a few non-function keywords (like
+C<__DATA__> and C<NULL>) to the C<@Functions> array.
 
 All additions and modifications are welcome.
+
+=head1 EXPORT
+
+Anything can be exported if you desire. Use the :all tag to get
+everything.
 
 =cut
 
 @Scalars = split ' ', <<'SCALAR';
     $a
     $b
-    $_
+    $_ $ARG
     $& $MATCH
     $` $PREMATCH
     $' $POSTMATCH
@@ -58,11 +71,8 @@ All additions and modifications are welcome.
     $~ $FORMAT_NAME
     $^ $FORMAT_TOP_NAME
     $: $FORMAT_LINE_BREAK_CHARACTERS
-    $^L $FORMAT_FORMFEED
-    $^A $ACCUMULATOR
-    $? $CHILD_ERROR
+    $? $CHILD_ERROR $^CHILD_ERROR_NATIVE
     $! $ERRNO $OS_ERROR
-    $^E $EXTENDED_OS_ERROR
     $@ $EVAL_ERROR
     $$ $PROCESS_ID $PID
     $< $REAL_USER_ID $UID
@@ -72,21 +82,31 @@ All additions and modifications are welcome.
     $0 $PROGRAM_NAME
     $[
     $]
+    $^A $ACCUMULATOR
     $^C $COMPILING
     $^D $DEBUGGING
+    $^E $EXTENDED_OS_ERROR
+    $^ENCODING
     $^F $SYSTEM_FD_MAX
     $^H
     $^I $INPLACE_EDIT
+    $^L $FORMAT_FORMFEED
     $^M
+    $^N
     $^O $OSNAME
+    $^OPEN
     $^P $PERLDB
     $^R $LAST_REGEXP_CODE_RESULT
+    $^RE_DEBUG_FLAGS
+    $^RE_TRIE_MAXBUF
     $^S $EXCEPTIONS_BEING_CAUGHT
     $^T $BASETIME
+    $^TAINT
+    $^UNICODE
+    $^UTF8LOCALE
     $^V $PERL_VERSION
-    $^W $WARNING
-    ${^WARNING_BITS}
-    ${^WIDE_SYSTEM_CALLS}
+    $^W $WARNING $^WARNING_BITS
+    $^WIDE_SYSTEM_CALLS
     $^X $EXECUTABLE_NAME
     $ARGV
 SCALAR
@@ -99,7 +119,7 @@ SCALAR
     @_
 ARRAY
 
-@Hashes = split ' ', <<HASH;
+@Hashes = split ' ', <<'HASH';
     %OVERLOAD
     %!
     %^H
@@ -108,7 +128,7 @@ ARRAY
     %SIG
 HASH
 
-@Filehandles = split ' ', <<FILEHANDLE;
+@Filehandles = split ' ', <<'FILEHANDLE';
     *ARGV ARGV
     ARGVOUT
     STDIN
@@ -116,7 +136,7 @@ HASH
     STDERR
 FILEHANDLE
 
-@Functions = split ' ', <<FUNCTION;
+@Functions = split ' ', <<'FUNCTION';
     AUTOLOAD
     BEGIN
     DESTROY
@@ -363,7 +383,7 @@ FILEHANDLE
     y
 FUNCTION
 
-@Barewords = split ' ', <<BAREWORD;
+@Barewords = split ' ', <<'BAREWORD';
     NULL
     __FILE__
     __LINE__
@@ -387,7 +407,7 @@ Joshua ben Jore <jjore@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2005, Joshua ben Jore. All rights reserved.
+Copyright 2006, Joshua ben Jore. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of either:
@@ -399,6 +419,6 @@ b) the "Artistic License" which comes with Perl.
 
 =cut
 
-<<ErrantStory_dot_Com;
-You know, when you stop and think about it, Cthulhu is a bit a Mary Sue isn't he?
-ErrantStory_dot_Com
+# This quote is blatantly copied from ErrantStory.com, Michael Poe's
+# excellent web comic
+"You know, when you stop and think about it, Cthulhu is a bit a Mary Sue isn't he?"
