@@ -1,5 +1,5 @@
 ## no critic (PodSections,UseWarnings,Interpolation,EndWithOne,NoisyQuotes)
-# $Id: /B-Keywords/trunk/lib/B/Keywords.pm 82 2006-08-17T17:42:06.773824Z josh  $
+# $Id: /B-Keywords/trunk/lib/B/Keywords.pm 273 2006-11-25T04:04:34.091173Z josh  $
 
 package B::Keywords;
 
@@ -13,7 +13,7 @@ use vars qw( @EXPORT_OK %EXPORT_TAGS );
 %EXPORT_TAGS = ( ':all' => \@EXPORT_OK );
 
 use vars '$VERSION';
-$VERSION = '1.04';
+$VERSION = '1.05';
 
 use vars '@Scalars';
 @Scalars = (
@@ -115,6 +115,7 @@ use vars '@Functions';
     END
     INIT
     CHECK
+    UNITCHECK
     abs
     accept
     alarm
