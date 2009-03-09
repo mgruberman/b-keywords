@@ -1,4 +1,4 @@
-B::Keywords version 0.04
+B::Keywords version 0.05
 =======================
 
 B::Keywords supplies the two arrays - @Symbols and @Barewords. The

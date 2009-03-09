@@ -6,7 +6,7 @@ use vars qw(
     $VERSION @Scalars @Arrays @Hashes @Filehandles @Symbols @Functions
     @Barewords);
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 
 @Scalars = (qw[
  $a

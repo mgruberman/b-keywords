@@ -12,5 +12,7 @@ Revision history for Perl extension B::Keywords.
 0.04 Jul 8 2003
   - Added tests per Josts K's request
   - Added 'use 5.006' because this isn't coded for pre 5.6
-
+0.05 Jul 8
+  - Added the test and license file to MANIFEST so it actually gets packaged
+    and doesn't just stay in my CVS directory. Boy am I dork.
 

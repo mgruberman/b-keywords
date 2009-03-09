@@ -1,6 +1,8 @@
 Changes
 lib/B/Keywords.pm
+LICENSE
 Makefile.PL
 MANIFEST
 README
 META.yml                                Module meta-data (added by MakeMaker)
+t/1.t
